@@ -1,0 +1,86 @@
+.main-reviews__item-more,
+.main-reviews__item-less {
+  display: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color .3s ease 0s;
+
+  -webkit-transition: color .3s ease 0s;
+  -o-transition: color .3s ease 0s;
+}
+
+body button.main-reviews__item-more,
+body button.main-reviews__item-less {
+  padding: 0;
+  line-height: 90%;
+  min-height: fit-content;
+  position: relative;
+  width: fit-content;
+}
+
+body button.main-reviews__item-more::after,
+body button.main-reviews__item-less::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 26px;
+  height: 26px;
+  top: -6px;
+  right: -36px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body button.main-reviews__item-more::after {
+  background-image: url('../img/arrow-right.svg');
+}
+
+body button.main-reviews__item-less::after {
+  background-image: url('../img/arrow-up.svg');
+}
+
+.main-reviews__item-more.open,
+.main-reviews__item-less.open {
+  display: block;
+}
+
+.reviews-item__text {
+  overflow: hidden;
+  max-height: 200px;
+  margin-bottom: 10px;
+}
+
+.reviews-item__text>div p {
+  font-size: 14px;
+  line-height: 120%;
+}
+
+.reviews-item__text>div p:not(:last-of-type) {
+  margin-bottom: 14px;
+}
+
+.reviews-item__text.open {
+  overflow: visible;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
+@media (max-width:991px) {
+  .main-reviews__item-more, .main-reviews__item-less {
+      font-size: 12px;
+  }
+}
+
+@media (max-width:930px) and (max-height:420px) {
+  .reviews-item__text>div p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width:767px) {
+  .reviews-item__text>div p {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,1267 @@
+/*Global*/
+
+@font-face {
+    font-family: 'Montserrat-Bold';
+    src:
+        url('../fonts/Montserrat-Bold.woff2') format('woff2'),
+        url('../fonts/Montserrat-Bold.woff') format('woff'),
+        url('../fonts/Montserrat-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-Light';
+    src:
+        url('../fonts/Montserrat-Light.woff2') format('woff2'),
+        url('../fonts/Montserrat-Light.woff') format('woff'),
+        url('../fonts/Montserrat-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-Medium';
+    src:
+        url('../fonts/Montserrat-Medium.woff2') format('woff2'),
+        url('../fonts/Montserrat-Medium.woff') format('woff'),
+        url('../fonts/Montserrat-Medium.ttf') format('truetype');
+    font-weight: medium;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src:
+        url('../fonts/Montserrat-Regular.woff2') format('woff2'),
+        url('../fonts/Montserrat-Regular.woff') format('woff'),
+        url('../fonts/Montserrat-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+:root {
+    --black: #211B1B;
+    --white: #ffffff;
+    --red: #CA1E26;
+    --red_light: #FF3333;
+    --blue: #3059C1;
+    --dark_blue: #1f45a5;
+    --grey: #999999;
+    --dark-grey: #544D4D;
+    --light-grey: #D9D9D9;
+    --font_light: 'Montserrat', serif;
+    --font_regular: 'Montserrat', serif;
+    --font_medium: 'Montserrat', serif;
+    --font_bold: 'Montserrat', serif;
+}
+
+html, body, body p {
+    font-family: var(--font_regular);
+}
+
+html, body {
+    overflow-x: auto;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--dark-grey);
+}
+
+body p {
+    margin-bottom: initial;
+    color: var(--dark-grey);
+}
+
+body p strong {
+    font-family: var(--font_bold);
+}
+
+body .container {
+    max-width: 1465px;
+}
+
+.closed {
+    overflow-y: hidden;
+    height: 100vh;
+}
+
+body .container-fluid {
+    max-width: 1706px;
+}
+
+figure {
+    overflow: hidden;
+}
+
+.post figure {
+    border-radius: 20px;
+    width: fit-content;
+    margin-bottom: 30px;
+}
+
+figure img, a.gallery-tab-list__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+body ul,
+body li {
+    list-style-type: none;
+    padding-left: 0;
+    /* margin-bottom: inherit; */
+}
+
+body .city-item a {
+    color: var(--black);
+    font-size: 20px;
+    padding-left: 20px;
+    display: inline-block;
+}
+
+body .city-item a::before {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: 40%;
+    left: -10px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--red);
+    border-radius: 50%;
+}
+
+body .city-item a:hover, body .city-item a:focus {
+    color: var(--red);
+}
+
+body .button {
+    font-family: var(--font_medium);
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    padding: 10px 40px;
+    font-size: 16px;
+    line-height: 120%;
+    background: linear-gradient(to right, var(--red), var(--red_light));
+    border: 1px solid var(--red);
+    width: fit-content;
+    min-height: 38px;
+    border-radius: 6px;
+}
+
+body .service-btns .button {
+    min-height: 33px;
+    padding: 6px 34px;
+}
+
+body .button.transparent {
+    background: transparent;
+    border-color: var(--white);
+}
+
+body .button.more-btn {
+    margin: 50px auto 0;
+    min-width: 272px;
+}
+
+body .button.city-choose-btn {
+    background: transparent;
+    padding-top: 8px;
+    border-width: 2px;
+    border-radius: 6px;
+}
+
+body .button.city-choose-btn span {
+    font-family: var(--font_regular);
+    color: var(--red);
+    font-size: 18px;
+    display: inline-block;
+}
+
+body .button.city-choose-btn span::after {
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: 2px;
+    right: -4px;
+    background: url('../img/to-open-btn.svg') no-repeat center/contain;
+}
+
+body footer .button.city-choose-btn {
+    color: var(--white);
+    border-color: var(--white);
+}
+
+body footer .button.city-choose-btn span {
+    color: var(--white);
+}
+
+body footer .button.city-choose-btn span::after {
+    background-image: url('../img/to-open-btn-white.svg');
+}
+
+body footer .button.city-choose-btn:hover, body footer .button.city-choose-btn:focus {
+    background-color: var(--red);
+}
+
+body .button:hover {
+    background: var(--black);
+    border-color: var(--white);
+    color: var(--white);
+}
+
+body .button.active {
+    background: var(--grey);
+    border-color: var(--black)
+}
+
+body .button.cta-btn {
+    background: var(--black);
+    min-height: 36px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    position: relative;
+    top: -2px;
+    border: 1px solid var(--white);
+}
+
+section, footer {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+section.hero {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 70px;
+}
+
+section.hero-pages {
+    padding-top: 173px;
+    padding-bottom: 85px;
+}
+
+section.autopark {
+    padding-top: 167px;
+}
+
+section.cities {
+    background-size: 900px auto;
+    background-position: right -7vw bottom -66px;
+}
+
+section.section-content-sidebar, section.hero-single {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+section.dark {
+    background: var(--dark-grey) url('../img/pattern.svg');
+    background-size: cover;
+    background-position: right;
+    background-repeat: no-repeat;
+}
+
+section.includes {
+    background-attachment: fixed;
+}
+
+section.dark *, body footer *, .hero-single *, section.includes * {
+    color: var(--white);
+}
+
+section.grey {
+    background-color: #F5F5F5;
+}
+
+section.dark .reviews-item * {
+    color: var(--dark-grey);
+}
+
+section.dark .reviews-item .reviews-bottom__btn>span {
+    color: var(--red);
+}
+
+section.dark .reviews-item h4 {
+    color: var(--black);
+}
+
+section.popup.city {
+    padding-top: 144px;
+}
+
+section.cta-short {
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: -24px;
+}
+
+section.cta {
+    padding-top: 78px;
+}
+
+section.news {
+    background-attachment: fixed;
+}
+
+.overlay::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 2px);
+    background: rgba(39, 37, 37, .5);
+}
+
+.overlay.dark::before {
+    background: rgba(39, 37, 37, .6);
+}
+
+.advantage-item.overlay::before {
+    background: rgba(39, 37, 37, .8);
+    border-radius: 10px;
+}
+
+.includes.overlay::before {
+    background: rgba(39, 37, 37, .7);
+}
+
+.service-item.overlay::before {
+    background: linear-gradient(to right, rgba(41, 27, 27, .8) 40%, transparent);
+}
+
+.cities.overlay::before {
+    background: rgba(255, 255, 255, .8);
+}
+
+.overlay .container-fluid, .overlay .container, .service-item.overlay>a, .service-item.overlay .service-item__wrap {
+    position: relative;
+    z-index: 2;
+}
+
+.block-top {
+    margin-bottom: 110px;
+}
+
+.media .block-top {
+    margin-bottom: 58px;
+}
+
+.block-top.service-price__bottom {
+    margin-bottom: 0;
+}
+
+.block-top.d-block h2 {
+    max-width: 650px;
+}
+
+.block-top.d-grid {
+    grid-template-columns: 43% calc(57% - 60px);
+    column-gap: 60px;
+}
+
+.block-top__text {
+    padding-left: 40px;
+    border-left: 1px solid var(--grey);
+}
+
+.dark .block-top__text {
+    border-color: var(--white);
+}
+
+.slider-arrows-wrap {
+    margin-bottom: 2rem;
+}
+
+.post blockquote {
+    padding: 26px;
+    margin-bottom: 26px;
+    border: 3px solid var(--red);
+    border-radius: 20px;
+}
+
+body .wp-block-quote:not(.is-style-plain):not(.has-text-align-center):not(.has-text-align-right) {
+    border-width: 3px;
+}
+
+.post blockquote p:last-of-type {
+    margin-bottom: 0;
+}
+
+.post p:not(:last-of-type), .post ul, .post ol {
+    margin-bottom: 24px;
+}
+
+.post ul {
+    padding-left: 20px;
+}
+
+.post ol li {
+    list-style-type: inherit;
+}
+
+.post ul li {
+    padding-left: 0;
+    margin-bottom: 10px;
+    list-style-type: disc;
+}
+
+body h1 {
+    margin-bottom: 11px;
+    color: var(--black);
+    line-height: 115%;
+    font-family: var(--font_bold);
+    font-size: 46px;
+}
+
+body h1.hero__title {
+    color: var(--white);
+    max-width: 840px;
+}
+
+body h1.hero-single__title {
+    margin-top: 46px;
+    margin-bottom: 31px;
+}
+
+body h2 {
+    margin-bottom: 40px;
+    color: var(--black);
+    line-height: 120%;
+    font-family: var(--font_bold);
+    font-size: 36px;
+}
+
+body .post h2 {
+    font-size: 18px;
+}
+
+body h2.digits__title {
+    margin-bottom: 4rem;
+}
+
+body h2.levels__title {
+    color: var(--white);
+    margin-bottom: 4rem;
+}
+
+body h2.mission-item__title {
+    margin-bottom: 0;
+}
+
+body h2.big-title {
+    font-size: 60px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, .4);
+    margin-bottom: 50px;
+}
+
+body h2.faq__title {
+    max-width: 550px;
+    margin-bottom: 60px;
+}
+
+body h3 {
+    margin-bottom: 40px;
+    color: var(--black);
+    line-height: 120%;
+    font-family: var(--font_bold);
+    font-size: 24px;
+}
+
+body h3.popup__heading {
+    margin-bottom: 18px;
+}
+
+body h4.news-item__title {
+    font-size: 18px;
+    line-height: 118%;
+}
+
+body h3.cta-short__title {
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+body h3.autopark-item__title {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+body h3.advantage-item__title {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+body h3.single-wrap__title {
+    color: var(--white);
+    margin-bottom: 30px;
+    font-size: 26px;
+}
+
+body h3.faq-sidebar__title {
+    color: var(--white);
+    margin-bottom: 49px;
+    font-size: 30px;
+}
+
+body h3.price-wrap__price {
+    font-size: 60px;
+}
+
+body .content-sidebar__sidebar h3 {
+    color: var(--white);
+}
+
+body p {
+    font-size: 18px;
+    line-height: 121%;
+    font-family: var(--font_regular);
+}
+
+body p.hero-pages-wrap__text {
+    font-size: 16px;
+}
+
+body.single p.hero-pages-wrap__text {
+    font-size: 16px;
+    max-width: 75%;
+}
+
+.grid-two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-four {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.centered {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title-line {
+    width: 72px;
+    height: 2px;
+    background-color: var(--red);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.city-choose-btn {
+    min-height: 45px;
+}
+
+.city-list {
+    column-gap: 40px;
+    row-gap: 15px;
+}
+
+.city-item a {
+    color: var(--blue);
+    text-decoration: underline;
+    font-family: var(--font_medium);
+}
+
+.red-line {
+    width: 72px;
+    height: 2px;
+    background: var(--red);
+    display: block;
+}
+
+.reviews-item .red-line {
+    margin-bottom: 1rem;
+}
+
+.link-more {
+    padding: 0;
+    line-height: 90%;
+    min-height: fit-content;
+    position: relative;
+    width: fit-content;
+}
+
+.link-more::after {
+    background-image: url('../img/arrow-right.svg');
+    content: "";
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 26px;
+    top: -4px;
+    right: -36px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.post-params__link.link-more::after {
+    background-image: url('../img/arrow-right-white.svg');
+    top: -6px;
+}
+
+footer .menu li {
+    font-size: 16px;
+}
+
+
+/*Media*/
+
+@media (max-width:1599px) {
+    section.popup.city {
+        padding-top: 81px;
+    }
+
+    section.cities {
+        background-size: 750px auto;
+    }
+}
+
+@media (max-width:1399px) {
+    body .button.city-choose-btn {
+        padding-top: 6px;
+        padding-bottom: 12px;
+    }
+
+    body .button.city-choose-btn span {
+        font-size: 16px;
+    }
+
+    body .button.city-choose-btn span::after {
+        top: 5px;
+    }
+
+    body h1 {
+        font-size: 40px;
+    }
+
+    body h2 {
+        margin-bottom: 30px;
+        font-size: 33px;
+    }
+
+    body h3.cta-short__title {
+        font-size: 26px;
+    }
+
+    .city-list {
+        row-gap: 10px;
+        column-gap: 26px;
+    }
+
+    .city-item a {
+        font-size: 14px;
+    }
+
+    section.popup.city {
+        padding-top: 44px;
+    }
+
+    section.hero-pages {
+        padding-bottom: 50px;
+    }
+
+    .block-top {
+        margin-bottom: 96px;
+    }
+
+    body h2.levels__title {
+        margin-bottom: 3rem;
+    }
+
+    body .service-btns .button {
+        padding: 6px 27px;
+    }
+
+    section.cta {
+        padding-bottom: 70px;
+    }
+
+    body h4.news-item__title {
+        font-size: 17px;
+        line-height: 118%;
+    }
+
+    footer {
+        padding-top: 90px;
+        padding-bottom: 70px;
+    }
+
+    section.autopark {
+        padding-top: 120px;
+    }
+
+    body h2.big-title {
+        font-size: 53px;
+        margin-bottom: 35px;
+    }
+
+    body h3.autopark-item__title {
+        font-size: 24px;
+        margin-bottom: 9px;
+    }
+
+    body h2.faq__title {
+        margin-bottom: 40px;
+    }
+
+    body h3.faq-sidebar__title {
+        margin-bottom: 34px;
+        font-size: 24px;
+    }
+
+    body.single p.hero-pages-wrap__text {
+        max-width: 90%;
+    }
+
+    body h3.single-wrap__title {
+        margin-bottom: 26px;
+        font-size: 21px;
+    }
+
+    body h3.price-wrap__price {
+        font-size: 48px;
+    }
+
+    section.cities {
+        background-size: 644px auto;
+        background-position: right -7vw bottom -36px;
+    }
+}
+
+@media (max-width:1199px) {
+    body .button.city-choose-btn {
+        padding-top: 4px;
+        padding-bottom: 9px;
+    }
+
+    body h1.hero__title {
+        margin-bottom: 3rem;
+    }
+
+    body h2 {
+        font-size: 30px;
+    }
+
+    body h2.levels__title {
+        margin-bottom: 2rem;
+    }
+
+    body h3 {
+        font-size: 20px;
+    }
+
+    body p {
+        font-size: 16px;
+    }
+
+    .post p:not(:last-of-type), .post ul, .post ol {
+        margin-bottom: 20px;
+    }
+
+    body h3.advantage-item__title {
+        font-size: 18px;
+        margin-bottom: 18px;
+    }
+
+    section.dark {
+        background-position: right -20vw center;
+    }
+
+    .digits-list.grid-four {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 3rem;
+    }
+
+    body .service-btns .button {
+        padding: 6px 16px;
+        font-size: 14px;
+    }
+
+    section.cta {
+        padding-bottom: 61px;
+    }
+
+    .reviews-list.grid-four {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    footer {
+        padding-top: 75px;
+        padding-bottom: 40px;
+    }
+
+    body p.hero-pages-wrap__text {
+        font-size: 14px;
+    }
+
+    section.hero-pages {
+        padding-top: 115px;
+    }
+
+    section.autopark {
+        padding-top: 100px;
+    }
+
+    body h2.big-title {
+        font-size: 45px;
+        margin-bottom: 27px;
+    }
+
+    body h3.autopark-item__title {
+        font-size: 22px;
+    }
+
+    body h2.faq__title {
+        margin-bottom: 30px;
+    }
+
+    body.single p.hero-pages-wrap__text {
+        max-width: 100%;
+    }
+
+    body h3.cta-short__title {
+        font-size: 22px;
+    }
+
+    body h3.price-wrap__price {
+        font-size: 40px;
+    }
+
+    body .city-item a {
+        font-size: 17px;
+    }
+
+    section.cities {
+        background-size: 558px auto;
+        background-position: right -7vw bottom -6px;
+    }
+}
+
+@media (max-width:991px) {
+    section, footer {
+        padding-top: 85px;
+        padding-bottom: 85px;
+    }
+
+    footer {
+        padding-top: 75px;
+        padding-bottom: 40px;
+    }
+
+    body h1 {
+        font-size: 36px;
+    }
+
+    body h2 {
+        font-size: 26px;
+    }
+
+    body p {
+        font-size: 16px;
+    }
+
+    .advantages-list.grid-three {
+        grid-template-columns: repeat(2, 362px);
+    }
+
+    body .button.city-choose-btn {
+        padding: 2px 20px 8px;
+    }
+
+    body .button {
+        padding: 6px 40px;
+        font-size: 14px;
+        min-height: 34px;
+    }
+
+    .block-top.d-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .block-top {
+        margin-bottom: 74px;
+    }
+
+    section.dark {
+        background-position: right -67vw center;
+    }
+
+    .block-top__text {
+        padding-left: 20px;
+    }
+
+    .services-list.grid-three {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section.cta {
+        padding-top: 65px;
+        padding-bottom: 46px;
+    }
+
+    .grid-four, .reviews-list.grid-four {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    body h4.news-item__title {
+        font-size: 16px;
+    }
+
+    section.autopark {
+        padding-top: 85px;
+    }
+
+    body h2.big-title {
+        font-size: 40px;
+    }
+
+    section.section-content-sidebar {
+        padding-bottom: 85px;
+    }
+
+    body h3.price-wrap__price {
+        font-size: 34px;
+    }
+
+    body .city-item a {
+        font-size: 15px;
+    }
+
+}
+
+@media (max-width:930px) and (max-height:420px) {
+    section, footer {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    body h1 {
+        font-size: 30px;
+        line-height: 115%;
+    }
+
+    body h1.hero__title {
+        max-width: 580px;
+        margin-bottom: 46px;
+    }
+
+    body h2 {
+        font-size: 21px;
+        margin-bottom: 22px;
+    }
+
+    body h2.digits__title {
+        margin-bottom: 2rem;
+    }
+
+    body h3, body h3.cta-short__title {
+        font-size: 16px;
+    }
+
+    body p {
+        font-size: 14px;
+    }
+
+    .city-item a {
+        font-size: 13px;
+    }
+
+    body .button.city-choose-btn span {
+        font-size: 13px;
+    }
+
+    .post p:not(:last-of-type), .post ul, .post ol {
+        margin-bottom: 14px;
+    }
+
+    .block-top {
+        margin-bottom: 55px;
+    }
+
+    .block-top__text {
+        padding-left: 20px;
+    }
+
+    .digits-list.grid-four {
+        row-gap: 2rem;
+    }
+
+    section.hero-pages {
+        padding-top: 86px;
+    }
+
+    section.hero-pages {
+        padding-bottom: 33px;
+    }
+
+    body h2.big-title {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+
+    .autopark-list.grid-four {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    section.section-content-sidebar {
+        padding-bottom: 60px;
+    }
+
+    body h3.faq-sidebar__title {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    body h3.single-wrap__title {
+        margin-bottom: 18px;
+        font-size: 18px;
+    }
+
+    .post figure {
+        max-width: 60%;
+        margin-bottom: 20px;
+    }
+
+    body .wp-block-spacer[style="height:60px"] {
+        height: 30px !important;
+    }
+}
+
+@media (max-width:767px) {
+    section, footer {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    body h1 {
+        font-size: 30px;
+        line-height: 115%;
+    }
+
+    body h2 {
+        font-size: 21px;
+        margin-bottom: 22px;
+    }
+
+    body p {
+        font-size: 14px;
+    }
+
+    body .button.city-choose-btn {
+        border-color: var(--white);
+        padding-top: 7px;
+        margin-bottom: 10vw;
+    }
+
+    body .hero-pages-wrap .button.city-choose-btn {
+        border-color: var(--black);
+    }
+
+    body .button.city-choose-btn, .button.header__btn {
+        min-width: 225px;
+    }
+
+    body .button.city-choose-btn span {
+        font-size: 13px;
+        color: var(--white);
+    }
+
+    body .hero-pages-wrap .button.city-choose-btn span {
+        color: var(--black);
+    }
+
+    body .button.city-choose-btn span::after {
+        display: none;
+    }
+
+    section.hero {
+        background-position: bottom right -451px;
+    }
+
+    body h3, body h3.cta-short__title, body h3.faq-sidebar__title {
+        font-size: 18px;
+    }
+
+    body h3.faq-sidebar__title {
+        margin-bottom: 20px;
+    }
+
+    .city-item a {
+        font-size: 13px;
+    }
+
+    .post p:not(:last-of-type), .post ul, .post ol {
+        margin-bottom: 14px;
+    }
+
+    body .button.cta-btn {
+        width: 100%;
+    }
+
+    .block-top {
+        margin-bottom: 55px;
+    }
+
+    .grid-three, .grid-three.advantages-list, .services-list.grid-three {
+        grid-template-columns: 1fr;
+    }
+
+    section.hero-pages {
+        padding-top: 86px;
+    }
+
+    body h2.big-title {
+        font-size: 35px;
+        margin-bottom: 20px;
+    }
+
+    .autopark-list.grid-four {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    body h3.autopark-item__title {
+        font-size: 3.4vw;
+        margin-bottom: 5px;
+    }
+
+    .title-line {
+        width: 8vw;
+    }
+
+    section.section-content-sidebar {
+        padding-bottom: 60px;
+    }
+
+    body h3.single-wrap__title {
+        margin-bottom: 18px;
+        font-size: 18px;
+    }
+
+    .post figure {
+        margin-bottom: 20px;
+    }
+
+    section.cities {
+        background-size: 422px auto;
+    }
+
+    body .wp-block-spacer[style="height:60px"] {
+        height: 30px !important;
+    }
+}
+
+@media (max-width:767px) and (max-height:420px) {
+    section.hero {
+        background-position: bottom right -242px;
+    }
+
+    body h1 {
+        font-size: 26px;
+    }
+
+    body h3.popup__heading {
+        margin-bottom: 10px;
+    }
+
+    .advantages-list.grid-three {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    body h3.advantage-item__title {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+
+    .advantage-item__text p {
+        font-size: 14px;
+    }
+
+    body .button.city-choose-btn {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width:659px) {
+    .grid-four, .reviews-list.grid-four {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:439px) {
+    body h1 {
+        font-size: 27px;
+    }
+
+    body h2 {
+        font-size: 20px;
+    }
+
+    body h3 {
+        font-size: 16px;
+    }
+
+    .advantage-item__text p {
+        font-size: 14px;
+    }
+
+    body h3.advantage-item__title {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
+
+    .city-list {
+        column-gap: 26px;
+    }
+
+    .city-item a {
+        font-size: 12px;
+    }
+
+    body h4.news-item__title {
+        font-size: 15px;
+    }
+
+    body h3.price-wrap__price {
+        font-size: 30px;
+    }
+
+    section.cities {
+        background-size: 373px auto;
+    }
+}
+
+@media (max-width:374px) {
+    body p.hero-pages-wrap__text {
+        font-size: 13px;
+    }
+
+    body h2.big-title {
+        font-size: 31px;
+    }
+
+    body h3.autopark-item__title {
+        font-size: 14px;
+    }
+
+    body h2.faq__title {
+        margin-bottom: 23px;
+    }
+}

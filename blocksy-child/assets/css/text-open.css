@@ -1,0 +1,7 @@
+.js-item-content {
+    display: none;
+}
+
+.js-item-open.opened, .js-item-open:hover.opened, .js-item-open:focus.opened {
+    color: var(--white);
+}

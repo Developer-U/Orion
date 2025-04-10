@@ -1,0 +1,32 @@
+/* Стилизация звёзд рейтинга*/
+/*Установи свои значения */
+
+body .star-rating {
+    display: flex !important;
+    height: fit-content !important;
+    width: fit-content !important;
+    flex-wrap: nowrap !important;
+}
+
+body .star-rating::before {
+    display: none;
+}
+
+body .star-rating .fa-star-o::before, body .star-rating .fa-star::before {
+    width: 17px;
+    height: 17px;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: block;
+}
+
+body .star-rating .fa-star {
+    background-image: url('../img/star-full.svg');
+}
+
+body .star-rating .fa-star-o {
+    background-image: url('../img/star-stroke.svg');
+}
+

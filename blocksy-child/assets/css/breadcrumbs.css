@@ -1,0 +1,46 @@
+.breadcrumbs {
+    margin-bottom: 3.5rem;
+}
+
+.breadcrumbs__list {
+    font-size: 12px;
+    font-family: var(--font_regular);
+    color: var(--grey);
+}
+
+.breadcrumbs__list span a {
+    color: var(--grey);
+    font-weight: 300;
+}
+
+.hero-single .breadcrumbs__list span a {
+    color: var(--white);
+}
+
+.contacts .breadcrumbs__list, .contacts .breadcrumbs__list span a {
+    color: var(--grey);
+}
+
+@media (max-width: 1199px) {
+    .breadcrumbs {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 991px) {
+    .breadcrumbs {
+        margin-bottom: 2.3rem;
+    }
+}
+
+@media (max-width:930px) and (max-height:420px) {
+    .breadcrumbs {
+        display: none;
+    }
+}
+
+@media (max-width:767px) {
+    .breadcrumbs {
+        display: none;
+    }
+}

@@ -1,0 +1,498 @@
+/*Menu global*/
+
+.header {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header__wrapper {
+    gap: 80px;
+}
+
+.header__logo {
+    width: 165px;
+}
+
+.hero-left .menu-osnovnoe-menyu-container, .hero-left .menu-menyu-v-sajdbare-glavnaya-container {
+    margin-bottom: 19vh;
+}
+
+.hero-left #primary-menu.menu, .footer #primary-menu.menu, .footer #services-menu {
+    flex-direction: column;
+}
+
+/*--------------ДЕСКТОПНОЕ МЕНЮ----------------*/
+
+/*-----Верхний уровень------*/
+
+/*-----По умолчанию------*/
+
+#primary-menu li {
+    padding: 0 16px;
+    display: list-item;
+    transition: all .25s ease-in-out;
+    transition: background-color .3s ease-in-out;
+}
+
+#primary-menu li a {
+    font-family: var(--font_medium);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color .3s ease-in-out;
+    min-height: 50px;
+}
+
+/*------При наведении-------*/
+
+#primary-menu li:hover, #primary-menu li:focus {
+    background: var(--dark-grey);
+    transition: all .25s ease-in-out;
+}
+
+#primary-menu li:hover a, #primary-menu li:focus a {
+    color: var(--white);
+    transition: all .25s ease-in-out;
+}
+
+/*-----Верхний уровень END------*/
+
+
+/*-----Подменю первый уровень Десктоп------*/
+
+/*-----По умолчанию------*/
+
+.menu-item-53 {
+    position: relative;
+}
+
+#primary-menu li.menu-item-53>a {
+    position: relative;
+}
+
+#primary-menu .sub-menu li a {
+    height: fit-content;
+    font-size: 14px;
+    color: var(--white);
+}
+
+/* Галка, поясняющая открытие подменю */
+#primary-menu li.menu-item-53>a::after {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top: -1px;
+    right: -4px;
+    background: url('../img/menu-arrow-down.svg') no-repeat center/contain;
+}
+
+.menu-item-53>.sub-menu {
+    display: none;
+    position: absolute;
+    background-color: var(--grey);
+    left: -56px;
+    top: 63px;
+    width: fit-content;
+    grid-template-columns: repeat(2, 500px);
+}
+
+.menu-item-53>ul.sub-menu.active {
+    display: grid;
+}
+
+#primary-menu .menu-item-53>.sub-menu li {
+    position: relative;
+    width: 100%;
+    padding-left: 90px;
+    transition: background-color .3s ease-in-out;
+}
+
+#primary-menu .menu-item-53>.sub-menu li>a {
+    font-size: 16px;
+    min-height: 36px;
+    line-height: 120%;
+}
+
+/*------При наведении-------*/
+
+/* Элемент открытия в десктопе при наведении */
+#primary-menu li.menu-item-53:hover, #primary-menu li.menu-item-53:focus {
+    background: transparent;
+}
+
+/* Элемент меню в подменю в десктопе */
+#primary-menu li.menu-item-53:hover .sub-menu li, #primary-menu li.menu-item-53:focus .sub-menu li {
+    background-color: transparent;
+}
+
+/* Элемент меню в подменю в десктопе при наведении */
+#primary-menu li.menu-item-53 .sub-menu li:hover, #primary-menu li.menu-item-53 .sub-menu li:focus {
+    background-color: var(--black);
+}
+
+/* Ссылка Элемента меню в подменю в десктопе при наведении */
+#primary-menu li.menu-item-53 .sub-menu li:hover a, #primary-menu li.menu-item-53 .sub-menu li:focus a {
+    color: var(--white);
+}
+
+/*-----Подменю первый уровень Десктоп END------*/
+
+/*--------------ДЕСКТОПНОЕ МЕНЮ END----------------*/
+
+
+/*--------------МОБИЛЬНОЕ МЕНЮ----------------*/
+
+/*-----Верхний уровень------*/
+
+/*-----По умолчанию------*/
+
+/*------При наведении-------*/
+
+.header-center__nav.opened #primary-menu li:hover, .header-center__nav.opened #primary-menu li:focus {
+    background: transparent;
+}
+
+.header-center__nav.opened #primary-menu li:hover a, .header-center__nav.opened #primary-menu li:focus a {
+    color: var(--red);
+}
+
+/*-----МОБИЛЬНОЕ Подменю первый уровень------*/
+
+/*-----По умолчанию------*/
+
+.header-center__nav.opened #primary-menu li.menu-item-53 .sub-menu li a {
+    color: var(--black);
+}
+
+/*------При наведении-------*/
+.header-center__nav.opened #primary-menu li.menu-item-53 .sub-menu li:hover, .header-center__nav.opened #primary-menu li.menu-item-53 .sub-menu li:focus {
+    background: transparent;
+}
+
+.header-center__nav.opened #primary-menu li.menu-item-53 .sub-menu li:hover a, .header-center__nav.opened #primary-menu li.menu-item-53 .sub-menu li:focus a {
+    color: var(--red);
+}
+
+/*-----Подменю первый уровень МОБИЛЬНОЕ END------*/
+
+/*--------------МОБИЛЬНОЕ МЕНЮ END----------------*/
+
+
+/*Burger menu*/
+.burger {
+    margin-left: auto;
+    position: relative;
+    z-index: 5;
+    height: 28px;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+}
+
+.burger, .burger span {
+    width: 34px;
+    transform: rotate(0deg);
+
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+}
+
+.burger span {
+    display: block;
+    position: absolute;
+    right: auto;
+    left: 0;
+    height: 3px;
+    opacity: 1;
+    background: var(--black);
+    transition: .25s ease-in-out;
+
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+}
+
+.burger span:first-child {
+    top: 0;
+}
+
+.burger span:nth-child(2) {
+    top: 10px;
+}
+
+.burger span:nth-child(3) {
+    top: 21px;
+    width: 28px;
+}
+
+.burger-close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background-color: transparent;
+    z-index: 99;
+}
+
+.burger-close svg {
+    width: 24px;
+    height: 24px;
+}
+
+.burger-close svg path {
+    fill: var(--black);
+}
+
+/*Burger end*/
+
+
+/*Media*/
+
+@media (max-width:1399px) {
+    .header__logo {
+        width: 150px;
+    }
+}
+
+@media (max-width:1199px) {
+    .menu-osnovnoe-menyu-container #primary-menu {
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .header__wrapper {
+        gap: 30px;
+    }
+
+    .header-center__nav {
+        transform: translateX(-105vw);
+        position: fixed;
+        width: 450px;
+        padding: 7rem 0 30px 10px;
+        gap: 22px;
+        left: 0;
+        top: 0;
+        z-index: 99;
+        height: 100%;
+        grid-template-rows: 1fr auto;
+        transition: transform .7s ease-in;
+        background-color: rgba(217, 217, 217, 0.98);
+    }
+
+    .header-center__nav.opened {
+        /* display: grid; */
+        transform: translateX(0);
+        transition: transform .7s ease-in;
+    }
+
+    .navbar-content {
+        height: calc(100vh - 230px);
+    }
+
+    .header__logo {
+        width: 130px;
+    }
+
+    #primary-menu li a {
+        font-size: 24px;
+        min-height: fit-content;
+        color: var(--black);
+    }
+
+    #primary-menu .sub-menu li a {
+        color: var(--black);
+    }
+
+    .menu-item-53>.sub-menu {
+        position: static;
+        grid-template-columns: 1fr;
+        background-color: transparent;
+    }
+
+    #primary-menu li.menu-item-53>a::after {
+        background-image: url('../img/menu-arrow-down-black.svg');
+    }
+
+    #primary-menu .menu-item-53>.sub-menu li {
+        padding-left: 14px;
+    }
+
+    .menu-item-53>.sub-menu li a {
+        font-size: 22px;
+    }
+}
+
+@media (max-width:991px) {
+    .header__logo {
+        width: 120px;
+    }
+}
+
+
+@media (max-width:930px) and (max-height:420px) {
+    .header__logo {
+        width: 110px;
+    }
+
+    .header__tel {
+        font-size: 18px;
+    }
+
+    .burger {
+        height: 18px;
+    }
+
+    .burger span {
+        width: 30px;
+    }
+
+    .burger-close svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .burger span:nth-child(3) {
+        width: 20px;
+    }
+
+    .burger span:nth-child(2) {
+        top: 8px;
+    }
+
+    .burger span:nth-child(3) {
+        top: 17px;
+    }
+
+    #primary-menu li a {
+        font-size: 17px;
+    }
+
+    #primary-menu .menu-item-53>.sub-menu li>a {
+        font-size: 14px;
+        min-height: 31px;
+    }
+
+    .header__tel {
+        height: 53px;
+        padding: 8px 20px;
+    }
+
+    .header__wrapper {
+        gap: 18px;
+    }
+
+    .header__tel a {
+        font-size: 18px;
+    }
+
+    .header-center__nav {
+        padding: 54px 0 16px 2px;
+    }
+
+    .navbar-content {
+        height: calc(100vh - 133px);
+    }
+
+    .footer #primary-menu li a, .footer #services-menu li a {
+        font-size: 16px;
+    }
+}
+
+@media (max-width:767px) {
+    .header__logo {
+        width: 110px;
+    }
+
+    .header-center__nav {
+        width: 100%;
+        border: none;
+        padding-left: 0;
+    }
+
+    .hero-left .menu-osnovnoe-menyu-container, .hero-left .menu-menyu-v-sajdbare-glavnaya-container {
+        margin: 0;
+    }
+
+    .footer #primary-menu li a, .footer #services-menu li a {
+        font-size: 16px;
+    }
+
+    #primary-menu li a {
+        font-size: 20px;
+    }
+
+    #primary-menu .menu-item-53>.sub-menu li>a {
+        font-size: 14px;
+        min-height: 31px;
+    }
+
+    .burger {
+        height: 18px;
+    }
+
+    .burger span {
+        width: 30px;
+    }
+
+    .burger-close svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .burger span:nth-child(3) {
+        width: 20px;
+    }
+
+    .burger span:nth-child(2) {
+        top: 8px;
+    }
+
+    .burger span:nth-child(3) {
+        top: 17px;
+    }
+
+}
+
+@media (max-width:439px) {
+    .header__tel a, .other-pages .header__tel a {
+        font-size: 16px;
+    }
+
+    .header__logo {
+        width: 100px;
+    }
+
+    .header-center__nav {
+        padding: 5rem 0 23px 10px;
+    }
+
+    #primary-menu .menu-item-53>.sub-menu li>a {
+        font-size: 13px;
+        min-height: 26px;
+    }
+}
+
+@media (max-width:374px) {
+    .header__tel a, .other-pages .header__tel a {
+        font-size: 15px;
+    }
+
+    #primary-menu li {
+        padding: 1px 12px;
+    }
+
+    #primary-menu li a {
+        font-size: 17px;
+    }
+}
