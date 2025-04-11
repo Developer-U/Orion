@@ -13,7 +13,6 @@ $top_block_text = get_field('news_text', 'options');
 $news_image = get_field('news_image', 'options');
 $news_count = is_home() ? '6' : '4';
 $current_page = !empty($_GET['num']) ? $_GET['num'] : 1;
-$paged = (get_query_var('page')) ? absint(get_query_var('page')) : 1;
 
 $arg_news = array(
     'orderby' => 'name',
@@ -22,7 +21,6 @@ $arg_news = array(
     'post_type' => 'post',
     'post_status' => 'publish',
     'paged' => $current_page,
-    // 'paged' => $paged,
 );
 
 $query_news = new WP_Query($arg_news);

@@ -18,7 +18,7 @@ get_template_part('template-parts/hero', 'single');
 
 get_template_part('template-parts/block', 'news');
 
-get_template_part('template-parts/block', 'services');
+get_template_part('template-parts/block', 'gallery');
 
 get_template_part('template-parts/cta');
 

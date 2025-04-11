@@ -590,6 +590,10 @@ body.single p.hero-pages-wrap__text {
     margin-bottom: 1rem;
 }
 
+.dep-wrap__left .red-line {
+    margin-bottom: 2rem;
+}
+
 .link-more {
     padding: 0;
     line-height: 90%;
@@ -619,6 +623,33 @@ body.single p.hero-pages-wrap__text {
 
 footer .menu li {
     font-size: 16px;
+}
+
+ul.page-numbers {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+ul.page-numbers li>.page-numbers {
+    padding: 5px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--grey);
+    border-radius: 10px;
+    color: var(--dark-grey);
+}
+
+ul.page-numbers li>.page-numbers.current {
+    background-color: var(--dark-grey);
+    color: var(--white);
+    border-color: var(--dark-grey);
+}
+
+ul.page-numbers li>.next.page-numbers, ul.page-numbers li>.prev.page-numbers {
+    border: none;
 }
 
 
@@ -1043,6 +1074,11 @@ footer .menu li {
     body .wp-block-spacer[style="height:60px"] {
         height: 30px !important;
     }
+
+    ul.page-numbers li>.page-numbers {
+        min-width: 36px;
+        border-radius: 7px;
+    }
 }
 
 @media (max-width:767px) {
@@ -1165,6 +1201,11 @@ footer .menu li {
 
     body .wp-block-spacer[style="height:60px"] {
         height: 30px !important;
+    }
+
+    ul.page-numbers li>.page-numbers {
+        min-width: 36px;
+        border-radius: 7px;
     }
 }
 

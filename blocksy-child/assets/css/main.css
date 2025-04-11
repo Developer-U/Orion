@@ -31,6 +31,57 @@ a.header__link {
     transition: color .3s ease-in-out;
 }
 
+a.contacts__item {
+    font-weight: 700;
+    padding-left: 67px;
+    position: relative;
+    color: var(--black);
+    transition: color .3s ease-in-out;
+    font-size: 30px;
+}
+
+.contacts-wrap {
+    gap: 40px;
+}
+
+.contacts-wrap__block {
+    margin-bottom: 0;
+}
+
+.contacts-wrap__block>li:not(:last-child) {
+    margin-bottom: 1.6rem;
+}
+
+a.contacts__item::before, .department-contacts__item::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -2px;
+    left: 0;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.department-contacts__item::before {
+    width: 30px;
+    height: 30px;
+}
+
+a.contacts__item.tel::before, .department-contacts__item.tel::before {
+    background-image: url('../img/tel-icon.svg');
+}
+
+a.contacts__item.email::before, .department-contacts__item.email::before {
+    background-image: url('../img/icon-mail-red.svg');
+}
+
+.department-contacts__item.address::before {
+    background-image: url('../img/icon-red-geo.svg');
+}
+
 a.header__link.email {
     font-family: var(--font_medium);
     font-size: 20px;
@@ -139,6 +190,11 @@ a.header__link:hover, a.header__link:focus {
     left: -27px;
 }
 
+.image-border.dep-wrap-border {
+    min-height: 400px;
+    height: auto;
+}
+
 .image-border .text-image__image {
     width: 100%;
     height: 100%;
@@ -146,6 +202,10 @@ a.header__link:hover, a.header__link:focus {
     top: -16px;
     left: 26px;
     z-index: 2;
+}
+
+.map.image-border .text-image__image {
+    overflow: hidden;
 }
 
 .text-image__btn {
@@ -791,6 +851,30 @@ a.photo-gallery-slider__slide:hover, a.photo-gallery-slider__slide:focus {
 }
 
 /*Includes end*/
+
+/*Departments*/
+
+.dep-wrap {
+    grid-template-columns: 1fr 693px;
+    gap: 30px;
+}
+
+.department-contacts__item {
+    position: relative;
+    padding-left: 50px;
+}
+
+.department-contacts__item:not(:last-of-type) {
+    margin-bottom: 1rem;
+}
+
+/*Departments end*/
+
+.map__image {
+    width: 250px;
+    height: 200px;
+}
+
 
 /*Media*/
 

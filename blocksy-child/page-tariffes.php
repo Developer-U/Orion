@@ -8,8 +8,6 @@ if (!defined('ABSPATH')) {
 
 get_header();
 
-get_header();
-
 get_template_part('template-parts/hero', 'pages');
 
 get_template_part('template-parts/block', 'tariffes');

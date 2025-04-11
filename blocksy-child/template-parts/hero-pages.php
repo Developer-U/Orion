@@ -66,8 +66,10 @@ if (is_single()) {
         </div>
 
         <?php
-        echo '<div class="hero-pages__social">';
-        get_template_part('template-parts/social');
-        echo '</div>'; ?>
+        if (!is_page('contacts')) {
+            echo '<div class="hero-pages__social">';
+            get_template_part('template-parts/social');
+            echo '</div>';
+        } ?>
     </div>
 </section>
