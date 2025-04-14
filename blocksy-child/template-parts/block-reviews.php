@@ -57,7 +57,7 @@ if ($query_reviews->have_posts()) {
                                         the_post_thumbnail('full', get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', TRUE));
                                     } else { ?>
                                         <img class="no-image"
-                                            src="<?php echo get_stylesheet_directory_uri(); ?>'/assets/img/no-image.jpg" alt="фото">
+                                            src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/no-image.jpg" alt="фото">
                                     <?php }
                                     ?>
                                 </figure>

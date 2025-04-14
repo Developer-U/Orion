@@ -31,21 +31,23 @@ if ($query_services->have_posts()) {
 
     <section class="services">
         <div class="container">
-            <?php
-            if ($top_block_title) {
-                ?>
-                <div
-                    class="block-top <?php if ($top_block_text) { ?>d-grid align-items-start<?php } else { ?>d-block<?php } ?>">
-                    <h2>
-                        <?php echo $top_block_title; ?>
-                    </h2>
-
+            <div
+                class="block-top <?php if ($top_block_text) { ?>d-grid align-items-start<?php } else { ?>d-block<?php } ?>">
+                <h2>
                     <?php
-                    if ($top_block_text) {
-                        echo '<div class="block-top__text">' . $top_block_text . '</div>';
+                    if ($top_block_title && !is_404()) {
+                        echo $top_block_title;
+                    } else {
+                        echo 'Наши услуги и тарифы';
                     } ?>
-                </div>
-            <?php } ?>
+                </h2>
+
+                <?php
+                if ($top_block_text) {
+                    echo '<div class="block-top__text">' . $top_block_text . '</div>';
+                }
+                ?>
+            </div>
 
             <ul class="services__list services-list d-grid grid-three">
                 <?php
@@ -56,12 +58,12 @@ if ($query_services->have_posts()) {
                         get_template_part('template-parts/service', 'item');
                     }
                     ;
-                    wp_reset_postdata() ?>
-                <?php } ?>
+                    wp_reset_postdata();
+                } ?>
             </ul>
 
             <a href="/tarrifes" class="button">Смотреть все тарифы</a>
         </div>
     </section>
 
-<?php } ?>
+<?php }

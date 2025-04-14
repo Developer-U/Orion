@@ -20,7 +20,7 @@ get_template_part('template-parts/hero', 'pages');
 
 <section class="contacts grey">
     <div class="container">
-        <div class="contacts__wrap contacts-wrap d-flex align-items-start justify-content-between">
+        <div class="contacts__wrap contacts-wrap d-flex align-items-start justify-content-lg-between">
             <ul class="contacts-wrap__block left col-auto">
                 <?php
                 if ($phone_num) { ?>
@@ -78,18 +78,20 @@ get_template_part('template-parts/hero', 'pages');
             $department_phones = get_sub_field('department_phones', 'options');
             /*Map*/
             $markImg = get_sub_field('mark_img', 'options');
-            $markText = get_sub_field('mark_text', 'options');
             $markCoords = get_sub_field('mark_coords', 'options');
+            $department_work_time = get_sub_field('department_work_time', 'options');
+            $department_mark_zoom = get_sub_field('department_mark_zoom', 'options') ? get_sub_field('department_mark_zoom', 'options') : 14;
             $index = $i++;
             ?>
 
-            <section class="departments__item department <?php if ($index == 0 || ($index % 2) == 0) { ?>grey<?php } ?>">
+            <section
+                class="departments__item department <?php if ($index == 0 || ($index % 2) == 0) { ?>''<?php } else { ?>grey<?php } ?>">
                 <div class="container">
                     <div class="department__wrap dep-wrap d-grid">
                         <div class="dep-wrap__left">
-                            <h3 class="dep-wrap__title">
+                            <h2 class="dep-wrap__title">
                                 <?php echo $department_title; ?>
-                            </h3>
+                            </h2>
                             <span class="red-line"></span>
 
                             <ul class="dep-wrap__contacts department-contacts">
@@ -102,8 +104,8 @@ get_template_part('template-parts/hero', 'pages');
                                     </li>
                                 <?php }
                                 if ($department_phones['one']) { ?>
-                                    <li class="d-flex gap-4 align-items-center">
-                                        <a class="department-contacts__item tel"
+                                    <li class="d-flex gap-3 gap-md-4 align-items-center">
+                                        <a class="department-contacts__item tel col-auto"
                                             href="tel:<?php echo $department_phones['one']; ?>">
                                             <?php echo $department_phones['one']; ?>
                                         </a>
@@ -112,8 +114,8 @@ get_template_part('template-parts/hero', 'pages');
                                     </li>
                                 <?php }
                                 if ($department_phones['two']) { ?>
-                                    <li class="d-flex gap-4 align-items-center">
-                                        <a class="department-contacts__item tel"
+                                    <li class="d-flex gap-3 gap-md-4 align-items-center">
+                                        <a class="department-contacts__item tel col-auto"
                                             href="tel:<?php echo $department_phones['two']; ?>">
                                             <?php echo $department_phones['two']; ?>
                                         </a>
@@ -122,8 +124,8 @@ get_template_part('template-parts/hero', 'pages');
                                     </li>
                                 <?php }
                                 if ($department_phones['three']) { ?>
-                                    <li>
-                                        <a class="department-contacts__item tel"
+                                    <li class="d-flex gap-3 gap-md-4 align-items-center">
+                                        <a class="department-contacts__item tel col-auto"
                                             href="tel:<?php echo $department_phones['three']; ?>">
                                             <?php echo $department_phones['three']; ?>
                                         </a>
@@ -141,10 +143,53 @@ get_template_part('template-parts/hero', 'pages');
                             </ul>
                         </div>
 
-                        <span class="image-border dep-wrap-border position-relative d-none d-lg-block">
-                            <div id="map" class="text-image__image map position-absolute" style="background-color: grey">
+                        <span class="image-border dep-wrap-border position-relative">
+                            <div id="map_<?php echo $index; ?>" class="text-image__image map position-absolute"
+                                style="background-color: grey">
                             </div>
                         </span>
+
+                        <script type="text/javascript">
+                            ymaps.ready(init);
+
+                            function init() {
+                                var myMap = new ymaps.Map('map_<?php echo $index; ?>', {
+                                    center: [<?php echo $markCoords; ?>],
+                                    zoom: <?php echo $department_mark_zoom; ?>,
+                                    controls: ['zoomControl']
+                                }, {
+                                    searchControlProvider: 'yandex#search'
+                                });
+
+                                // Создаем геообъект с типом геометрии "Точка".
+                                myGeoObject = new ymaps.GeoObject({
+                                    // Описание геометрии.
+                                    geometry: {
+                                        type: "Point",
+                                        coordinates: [<?php echo $markCoords; ?>]
+                                    },
+                                    // Свойства.
+                                    properties: {
+                                        balloonContentHeader: '<figure class="map__image"><img src="<?php echo esc_url($markImg['url']); ?>"></figure>',
+                                        balloonContentBody: `                
+                                        <div class="baloon__box">                    
+                                            <p class="baloon__text"><?php echo $department_address; ?></p>                
+                                            <p class="baloon__text"><?php echo $department_work_time; ?></p>               
+                                        </div>`,
+                                    }
+                                }, {
+                                    // Опции.           
+                                    preset: 'islands#redGlyphIcon'
+                                }
+                                );
+
+                                myMap.geoObjects
+                                    .add(myGeoObject);
+
+                                myMap.behaviors.disable('scrollZoom');
+
+                            }
+                        </script>
                     </div>
                 </div>
             </section>
@@ -153,41 +198,7 @@ get_template_part('template-parts/hero', 'pages');
     } ?>
 </main>
 
-<script type="text/javascript">
-    ymaps.ready(init);
-
-    function init() {
-        var myMap = new ymaps.Map('map', {
-            center: [55.81150018503049, 37.77971868896483],
-            zoom: 4,
-            controls: ['zoomControl']
-        }, {
-            searchControlProvider: 'yandex#search'
-        });
-
-        // Создаем геообъект с типом геометрии "Точка".
-        myGeoObject = new ymaps.GeoObject({
-            // Описание геометрии.
-            geometry: {
-                type: "Point",
-                coordinates: [<?= $markCoords; ?>]
-            },
-            // Свойства.
-            properties: {
-                balloonContentHeader: '<figure class="map__image"><img src="<?php echo esc_url($markImg['url']); ?>"></figure>',
-                balloonContentBody: '<div class="map__text"><?= $markText; ?></div>'
-            }
-        }, {
-            // Опции.           
-            preset: 'islands#redGlyphIcon'
-        }
-        );
-
-        myMap.geoObjects
-            .add(myGeoObject);
-
-    }
-</script>
-
 <?php
+get_template_part('template-parts/cta');
+
 get_footer();

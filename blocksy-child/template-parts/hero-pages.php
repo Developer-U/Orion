@@ -24,7 +24,7 @@ if (is_single()) {
 }
 ?>
 
-<section class="hero-pages">
+<section class="hero-pages <?php if (is_page('contacts')) { ?>contacts<?php } ?>">
     <!-- Основной контент -->
     <div class="container">
         <div
@@ -59,7 +59,7 @@ if (is_single()) {
                 $image_url = (is_single()) ? $hero_pages_image : $hero_pages_image['url'];
                 ?>
                 <div
-                    class="hero-pages__image position-relative <?php if (is_page('tariffes') || is_archive()) { ?>d-none d-lg-block<?php } ?>">
+                    class="hero-pages__image position-relative <?php if (is_page('tariffes') || is_archive() || is_page('contacts')) { ?>d-none d-lg-block<?php } ?>">
                     <img src="<?php echo $image_url; ?>" alt="<?php echo $image_url; ?>">
                 </div>
             <?php } ?>
