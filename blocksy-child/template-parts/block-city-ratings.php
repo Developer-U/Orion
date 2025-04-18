@@ -6,7 +6,7 @@
 $rating_images = get_field('rating_images', 'options');
 ?>
 
-<div class="hero-pages box d-flex mb-4 d-md-none align-items-start gap-2 justify-content-between">
+<div class="hero-pages box d-flex mb-2 mb-md-4 d-md-none align-items-start gap-2 justify-content-between">
     <?php if (is_front_page()) { ?>
         <div class="hero-pages__buttons">
             <button class="button city-choose-btn" data-popup-open="city-popup">

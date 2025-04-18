@@ -375,6 +375,11 @@ a.header__link:hover, a.header__link:focus {
     margin-bottom: 0;
 }
 
+.content-sidebar__form {
+    margin-bottom: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid var(--light-grey);
+}
 
 /*Services end*/
 
@@ -743,9 +748,6 @@ footer a:hover, footer a:focus {
     padding: 15rem 30px 105px;
 }
 
-.content-sidebar__sidebar .services__list {
-    margin-bottom: 13.5rem;
-}
 
 /*Tariffes*/
 
@@ -1399,10 +1401,6 @@ a.photo-gallery-slider__slide:hover, a.photo-gallery-slider__slide:focus {
         margin-bottom: initial;
     }
 
-    .content-sidebar__sidebar .services__list {
-        margin-bottom: 10.5rem;
-    }
-
     table.tarif-table thead th {
         font-size: 16px;
     }
@@ -1876,9 +1874,6 @@ a.photo-gallery-slider__slide:hover, a.photo-gallery-slider__slide:focus {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
-        margin-bottom: 60px;
-        padding-bottom: 30px;
-        border-bottom: 1px solid var(--light-grey);
     }
 
     .content-sidebar__sidebar .services__list.blog-sidebar-list {
@@ -2577,7 +2572,7 @@ a.photo-gallery-slider__slide:hover, a.photo-gallery-slider__slide:focus {
     }
 
     .hero-pages-wrap.d-grid, .single .hero-pages-wrap.d-grid {
-        gap: 32px;
+        gap: 12px;
     }
 
     .hero-pages__image {
@@ -2599,6 +2594,14 @@ a.photo-gallery-slider__slide:hover, a.photo-gallery-slider__slide:focus {
         margin-bottom: 20px;
         display: block;
         font-size: 12px;
+    }
+
+    .hero-pages .hero-pages.box {
+        margin-bottom: -38px !important;
+    }
+
+    .hero-pages .hero-pages__title {
+        width: calc(100% - 118px);
     }
 }
 

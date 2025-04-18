@@ -55,6 +55,12 @@ get_template_part('template-parts/hero', 'pages');
             </div>
 
             <div class="single-wrap__sidebar content-sidebar__sidebar">
+                <div class="content-sidebar__form">
+                    <h3 class="cta-short__title">Заказать услугу</h3>
+
+                    <?php echo do_shortcode('[contact-form-7 id="1e8a464" title="Заказ услуги"]'); ?>
+                </div>
+
                 <h3 class="single-wrap__title">
                     Другие наши услуги
                 </h3>
@@ -72,12 +78,6 @@ get_template_part('template-parts/hero', 'pages');
                         wp_reset_postdata() ?>
                     <?php } ?>
                 </ul>
-
-                <div class="content-sidebar__form">
-                    <h3 class="cta-short__title">Заказать услугу</h3>
-
-                    <?php echo do_shortcode('[contact-form-7 id="1e8a464" title="Заказ услуги"]'); ?>
-                </div>
             </div>
         </div>
     </div>

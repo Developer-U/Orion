@@ -1631,6 +1631,16 @@ ul.page-numbers li>.next.page-numbers, ul.page-numbers li>.prev.page-numbers {
         font-size: 66px;
         margin-bottom: 1rem;
     }
+
+    .rating-list__item {
+        max-width: 90px;
+        height: 37px;
+    }
+
+    section.hero-pages {
+        padding-top: 74px;
+        padding-bottom: 20px;
+    }
 }
 
 @media (max-width:374px) {
