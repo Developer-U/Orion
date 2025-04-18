@@ -18,7 +18,7 @@ body .accordionjs .acc_section .acc_head {
     color: var(--black);
 }
 
-body .accordionjs .acc_section .acc_head span {
+body .accordionjs .acc_section .acc_head span, .service-item__arrow {
     display: block;
     content: "";
     position: absolute;
@@ -28,6 +28,14 @@ body .accordionjs .acc_section .acc_head span {
     height: 40px;
     background: url('../img/plus.svg') no-repeat center/contain;
     transition: transform .4s ease-in;
+}
+
+.service-item__arrow {
+    width: 24px;
+    height: 24px;
+    transform: rotate(-90deg);
+    right: -32px;
+    top: 1px;
 }
 
 body .accordionjs .acc_section .acc_head span.active {
@@ -45,10 +53,22 @@ body .accordionjs .acc_section.acc_active>.acc_head {
     border-bottom: none;
 }
 
-/* body .accordionjs .acc_section:first-of-type, body .accordionjs .acc_section:first-of-type .acc_head {
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-} */
+@media (min-width:1921px) {
+    body .accordionjs .acc_section .acc_head {
+        font-size: 0.75vw;
+        padding: 0.5vw 100px 0.48vw 0.8vw;
+    }
+
+    body .accordionjs .acc_section .acc_content {
+        padding: 0 1vw 1vw 0.9vw;
+    }
+
+    .service-item__arrow {
+        width: 1vw;
+        height: 1vw;
+        right: -1.2vw;
+    }
+}
 
 @media (max-width:1399px) {
     body .accordionjs .acc_section .acc_head {
@@ -72,7 +92,7 @@ body .accordionjs .acc_section.acc_active>.acc_head {
 }
 
 @media (max-width:991px) {
-    body .accordionjs .acc_section .acc_head span {
+    body .accordionjs .acc_section .acc_head span, .service-item__arrow {
         width: 30px;
         height: 30px;
     }
@@ -88,7 +108,7 @@ body .accordionjs .acc_section.acc_active>.acc_head {
         padding-bottom: 13px;
     }
 
-    body .accordionjs .acc_section .acc_head span {
+    body .accordionjs .acc_section .acc_head span, .service-item__arrow {
         top: 29%;
         width: 24px;
         height: 24px;
@@ -101,7 +121,7 @@ body .accordionjs .acc_section.acc_active>.acc_head {
         padding-bottom: 13px;
     }
 
-    body .accordionjs .acc_section .acc_head span {
+    body .accordionjs .acc_section .acc_head span, .service-item__arrow {
         top: 29%;
         width: 24px;
         height: 24px;

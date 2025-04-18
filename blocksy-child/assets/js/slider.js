@@ -7,7 +7,11 @@ window.addEventListener('DOMContentLoaded', function(){
         keyboard: {
             enabled: true,
             pageUpDown: true,
-        },       
+        },  
+        autoplay: {
+            delay: 3000,            
+            waitForTransition: true,
+        },      
         navigation: {
             nextEl: ".swiper-button-next",
             prevEl: ".swiper-button-prev",

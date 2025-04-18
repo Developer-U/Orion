@@ -29,9 +29,7 @@ if (is_single()) {
     <div class="container">
         <div
             class="hero-pages__wrap hero-pages-wrap <?php if ($hero_pages_image) { ?>d-grid flex-column flex-lg-row justify-content-between<?php } ?>">
-            <button class="button city-choose-btn d-flex d-md-none" data-popup-open="city-popup">
-                <span>Выбрать город отправки</span>
-            </button>
+            <?php get_template_part('template-parts/block', 'city-ratings'); ?>
 
             <div class="hero-pages-wrap__left">
                 <h1 class="hero-pages__title">
@@ -60,7 +58,9 @@ if (is_single()) {
                 ?>
                 <div
                     class="hero-pages__image position-relative <?php if (is_page('tariffes') || is_archive() || is_page('contacts')) { ?>d-none d-lg-block<?php } ?>">
-                    <img src="<?php echo $image_url; ?>" alt="<?php echo $image_url; ?>">
+                    <img src="<?php echo $image_url; ?>" alt="<?php echo $image_url; ?>" data-aos="fade-left"
+                        data-aos-offset="0" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out"
+                        data-aos-once="true" data-aos-anchor-placement="top-left">
                 </div>
             <?php } ?>
         </div>

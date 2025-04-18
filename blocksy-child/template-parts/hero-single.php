@@ -30,9 +30,7 @@ if (is_single()) {
     <!-- Основной контент -->
     <div class="container-fluid hero-single__wrap d-flex flex-column justify-content-between">
         <div class="container col d-flex flex-column justify-content-between">
-            <button class="button city-choose-btn d-flex d-md-none col-auto" data-popup-open="city-popup">
-                <span>Выбрать город отправки</span>
-            </button>
+            <?php get_template_part('template-parts/block', 'city-ratings'); ?>
 
             <div class="hero-single__inner hero-pages-inner d-flex flex-column justify-content-center col">
                 <h1 class="hero-single__title">

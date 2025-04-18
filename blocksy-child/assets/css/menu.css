@@ -48,7 +48,7 @@
 
 /*------При наведении-------*/
 
-#primary-menu li:hover, #primary-menu li:focus {
+#primary-menu li:hover, #primary-menu li:focus, #primary-menu li.active {
     background: var(--dark-grey);
     transition: all .25s ease-in-out;
 }
@@ -259,6 +259,50 @@
 
 /*Media*/
 
+@media (min-width:1921px) {
+    .header__logo, .footer__logo {
+        width: 7vw;
+    }
+
+    .header__logo img, .footer__logo img {
+        height: 100%;
+        width: 100%;
+    }
+
+    #primary-menu li {
+        padding: 0 0.85vw;
+    }
+
+    #primary-menu li a {
+        font-size: 0.78vw;
+        min-height: 3.2vw;
+    }
+
+    .menu-item-53>.sub-menu {
+        left: -56px;
+        top: 3.2vw;
+        grid-template-columns: repeat(2, 16vw);
+        padding-bottom: 0.5vw;
+    }
+
+    #primary-menu .menu-item-53>.sub-menu li>a {
+        font-size: 0.75vw;
+        min-height: 2vw;
+    }
+}
+
+@media (max-width:1765px) {
+    .header__wrapper {
+        gap: 32px;
+    }
+}
+
+@media (max-width:1599px) {
+    .header__wrapper {
+        gap: 10px;
+    }
+}
+
 @media (max-width:1399px) {
     .header__logo {
         width: 150px;
@@ -318,6 +362,8 @@
         position: static;
         grid-template-columns: 1fr;
         background-color: transparent;
+        padding-top: 2px;
+        padding-bottom: 10px;
     }
 
     #primary-menu li.menu-item-53>a::after {
@@ -330,6 +376,16 @@
 
     .menu-item-53>.sub-menu li a {
         font-size: 22px;
+    }
+
+    .header__wrapper {
+        gap: 30px;
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    #primary-menu li.active {
+        background: initial;
     }
 }
 
@@ -389,7 +445,8 @@
     }
 
     .header__wrapper {
-        gap: 18px;
+        gap: 10px;
+        flex-wrap: nowrap;
     }
 
     .header__tel a {
@@ -433,8 +490,9 @@
     }
 
     #primary-menu .menu-item-53>.sub-menu li>a {
-        font-size: 14px;
-        min-height: 31px;
+        font-size: 16px;
+        min-height: 35px;
+        line-height: 135%;
     }
 
     .burger {
@@ -477,10 +535,6 @@
         padding: 5rem 0 23px 10px;
     }
 
-    #primary-menu .menu-item-53>.sub-menu li>a {
-        font-size: 13px;
-        min-height: 26px;
-    }
 }
 
 @media (max-width:374px) {
@@ -494,5 +548,10 @@
 
     #primary-menu li a {
         font-size: 17px;
+    }
+
+    #primary-menu .menu-item-53>.sub-menu li>a {
+        font-size: 13px;
+        min-height: 26px;
     }
 }

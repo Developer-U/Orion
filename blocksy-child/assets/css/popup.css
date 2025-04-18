@@ -77,6 +77,29 @@ button.popup__del:hover svg path, button.popup__del:focus svg path {
     width: fit-content;
 }
 
+@media (min-width:1921px) {
+    .popup__cont {
+        width: 35vw;
+        padding: 2vw;
+    }
+
+    .popup__cont.city-cont {
+        max-width: 64vw;
+    }
+
+    button.popup__del {
+        width: 1vw;
+        height: 1vw;
+        right: 1vw;
+        top: 1vw;
+    }
+
+    button.popup__del>svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 @media (max-width:1399px) {
     .popup__cont.city-cont {
         padding: 42px 20px 24px;
@@ -98,7 +121,7 @@ button.popup__del:hover svg path, button.popup__del:focus svg path {
 }
 
 @media (max-width:767px) and (max-height: 420px) {
-    .popup__cont {      
+    .popup__cont {
         max-width: 532px;
     }
 }

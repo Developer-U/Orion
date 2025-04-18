@@ -227,6 +227,29 @@ body .wpcf7-list-item>label, body .wpcf7-list-item>label:not(.wpcf7-form-control
     display: flex;
 }
 
+@media (min-width:1921px) {
+    form input.input-form {
+        height: 1.6vw;
+        padding: 0.5vw 0.8vw;
+        border-radius: 0.2vw;
+    }
+
+    form input.input-form, form input.input-form::placeholder, form .textarea, .input-form textarea::placeholder {
+        font-size: 0.7vw;
+    }
+
+    .input-city {
+        max-width: 9vw;
+    }
+
+    .agree+span.wpcf7-list-item-label {
+        font-size: 0.5vw;
+    }
+
+    .faq-sidebar .inputs-wrap {
+        max-width: 14vw;
+    }
+}
 
 @media (max-width:1785px) {
     .agree+span.wpcf7-list-item-label {
@@ -263,11 +286,11 @@ body .wpcf7-list-item>label, body .wpcf7-list-item>label:not(.wpcf7-form-control
     }
 
     form input.input-form, form input.input-form::placeholder, form .textarea, .input-form textarea::placeholder {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     form input.input-form {
-        height: 36px;
+        height: 41px;
         padding: 6px 13px;
     }
 

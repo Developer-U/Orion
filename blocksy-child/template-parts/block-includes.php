@@ -16,7 +16,9 @@ $includes_image = get_field('includes_image', 'options');
     <div class="container">
         <ul class="includes__wrap includes-wrap d-grid align-items-start">
             <?php if (have_rows('includes_item', 'options')) { ?>
-                <li class="includes-wrap__item includes-item">
+                <li class="includes-wrap__item includes-item" data-aos="fade-right" data-aos-offset="0" data-aos-delay="50"
+                    data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-once="true"
+                    data-aos-anchor-placement="top-left">
                     <h2 class="includes-item__title">В стоимость включено:</h2>
 
                     <ul class="includes-item__list includes-list">
@@ -34,7 +36,9 @@ $includes_image = get_field('includes_image', 'options');
                 </li>
             <?php }
             if (have_rows('excludes_item', 'options')) { ?>
-                <li class="includes-wrap__item includes-item">
+                <li class="includes-wrap__item includes-item" data-aos="fade-left" data-aos-offset="50" data-aos-delay="150"
+                    data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-once="true"
+                    data-aos-anchor-placement="top-left">
                     <h2 class="includes-item__title">В стоимость не включено:</h2>
 
                     <ul class="includes-item__list includes-list">

@@ -46,6 +46,9 @@ $global_header = ob_get_clean();
 	$tel = get_field('tel-link', 'options');
 	$phone_num = get_field('tel', 'options');
 	$email = get_field('email', 'options');
+
+	// Rating_images
+	$rating_images = get_field('rating_images', 'options');
 	?>
 
 	<header class="header">
@@ -53,7 +56,6 @@ $global_header = ob_get_clean();
 			<div class="container-fluid">
 				<div class="header__wrapper d-flex justify-content-between align-items-center">
 					<div class="header-top__left d-flex align-items-center justify-content-start">
-
 						<!-- Burger -->
 						<button class="burger d-block d-xl-none" aria-label="Открыть меню">
 							<span></span>
@@ -74,10 +76,50 @@ $global_header = ob_get_clean();
 						</button>
 					</div>
 
+					<?php
+					if ($rating_images['one'] || $rating_images['two'] || $rating_images['three']) { ?>
+						<ul class="header-top__center rating-list d-none d-md-grid gap-2">
+							<?php if ($rating_images['one']) {
+								if ($rating_images['one_link']) {
+									echo '<a class="rating-list__item" href=" ' . $rating_images['one_link'] . '">';
+									echo '<img src=" ' . $rating_images['one']['url'] . '" alt=" ' . $rating_images['one']['alt'] . ' ">';
+									echo '</a>';
+								} else {
+									echo '<figure class="rating-list__item">';
+									echo '<img src=" ' . $rating_images['one']['url'] . '" alt=" ' . $rating_images['one']['alt'] . ' ">';
+									echo '</figure>';
+								}
+							}
+							if ($rating_images['two']) {
+								if ($rating_images['two_link']) {
+									echo '<a class="rating-list__item" href=" ' . $rating_images['two_link'] . '">';
+									echo '<img src=" ' . $rating_images['two']['url'] . '" alt=" ' . $rating_images['two']['alt'] . ' ">';
+									echo '</a>';
+								} else {
+									echo '<figure class="rating-list__item">';
+									echo '<img src=" ' . $rating_images['two']['url'] . '" alt=" ' . $rating_images['two']['alt'] . ' ">';
+									echo '</figure>';
+								}
+							}
+							if ($rating_images['three']) {
+								if ($rating_images['three_link']) {
+									echo '<a class="rating-list__item" href=" ' . $rating_images['three_link'] . '">';
+									echo '<img src=" ' . $rating_images['three']['url'] . '" alt=" ' . $rating_images['three']['alt'] . ' ">';
+									echo '</a>';
+								} else {
+									echo '<figure class="rating-list__item">';
+									echo '<img src=" ' . $rating_images['three']['url'] . '" alt=" ' . $rating_images['three']['alt'] . ' ">';
+									echo '</figure>';
+								}
+							}
+							?>
+						</ul>
+					<?php } ?>
+
 					<div class="header-top__right d-flex align-items-center justify-content-end">
 						<?php
 						if ($email) { ?>
-							<a class="header__link email col-auto d-none d-xl-block" href="mailto:<?php echo $email; ?>">
+							<a class="header__link email col-auto d-none d-xxl-block" href="mailto:<?php echo $email; ?>">
 								<?php echo $email; ?>
 							</a>
 						<?php }

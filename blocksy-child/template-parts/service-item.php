@@ -13,6 +13,8 @@ $services_price = get_field('services_price');
         <h3 class="service-item__title">
             <?php the_title(); ?>
         </h3>
+
+        <span class="service-item__arrow"></span>
     </a>
 
     <div class="service-item__wrap white-agree col-auto">

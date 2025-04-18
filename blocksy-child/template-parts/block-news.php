@@ -11,7 +11,7 @@ $page_id = get_the_ID();
 $top_block_title = get_field('news_title', 'options');
 $top_block_text = get_field('news_text', 'options');
 $news_image = get_field('news_image', 'options');
-$news_count = is_home() ? '6' : '4';
+$news_count = is_home() ? '16' : '4';
 $current_page = !empty($_GET['num']) ? $_GET['num'] : 1;
 
 $arg_news = array(
@@ -52,12 +52,19 @@ if ($query_news->have_posts()) {
                     <?php } ?>
                     <ul class="reviews__list reviews-list d-grid grid-four">
                         <?php if ($query_news->have_posts()) {
+                            $i = 0;
                             while ($query_news->have_posts()):
                                 $query_news->the_post();
+                                $index = $i++;
                                 ?>
 
-                                <li
-                                    class="news-list__item reviews-item news-item position-relative d-flex flex-column justify-content-between gap-3">
+                                <li class="news-list__item reviews-item news-item position-relative d-flex flex-column justify-content-between gap-3"
+                                    <?php if (!is_home()) { ?> data-aos="fade-up" data-aos-offset="200"
+                                        data-aos-delay="<?php echo 100 * ($index * 2.5); ?>" data-aos-duration="900"
+                                        data-aos-easing="ease-in-out" data-aos-once="true" data-aos-anchor-placement="top-left"
+                                    <?php } ?>
+                                    >
+
                                     <div class="news-item__wrap col">
                                         <h4 class="news-item__title">
                                             <?php the_title(); ?>

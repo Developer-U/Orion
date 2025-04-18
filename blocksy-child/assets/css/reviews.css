@@ -67,9 +67,15 @@ body button.main-reviews__item-less::after {
   max-height: fit-content;
 }
 
+@media (min-width:1921px) {
+  .reviews-item__text>div p {
+    font-size: 0.72vw;
+  }
+}
+
 @media (max-width:991px) {
   .main-reviews__item-more, .main-reviews__item-less {
-      font-size: 12px;
+    font-size: 12px;
   }
 }
 

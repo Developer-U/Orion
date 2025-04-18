@@ -41,27 +41,6 @@
     transition: all .25s ease-in-out;
 }
 
-.social__link.telegram:hover, .social__link.telegram:focus, .social__link.telegram:active {
-    background-image: url('../img/Telegram-hover.svg');
-    -webkit-transition: all .25s ease-in-out;
-    -o-transition: all .25s ease-in-out;
-    transition: all .25s ease-in-out;
-}
-
-.social__link.whatsapp:hover, .social__link.whatsapp:focus, .social__link.whatsapp:active {
-    background-image: url('../img/whatsapp-hover.svg');
-    -webkit-transition: all .25s ease-in-out;
-    -o-transition: all .25s ease-in-out;
-    transition: all .25s ease-in-out;
-}
-
-.social__link.vk:hover, .social__link.vk:focus, .social__link.vk:active {
-    background-image: url('../img/vk-hover.svg');
-    -webkit-transition: all .25s ease-in-out;
-    -o-transition: all .25s ease-in-out;
-    transition: all .25s ease-in-out;
-}
-
 .social__link.youtube {
     background-image: url('../img/youtube_white.svg');
     -webkit-transition: all .25s ease-in-out;
@@ -89,15 +68,36 @@
     background-image: url('../img/rutube.svg');
 }
 
-.social__link.youtube:hover, .social__link.youtube:focus, .social__link.youtube:active {
-    background-image: url('../img/youtube_hover.svg');
+.social__link.rutube {
+    background-image: url('../img/rutube_white.svg');
     -webkit-transition: all .25s ease-in-out;
     -o-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out;
 }
 
-.social__link.rutube {
-    background-image: url('../img/rutube_white.svg');
+.social__link.telegram:hover, .social__link.telegram:focus, .social__link.telegram:active {
+    background-image: url('../img/Telegram-hover.svg');
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+.social__link.whatsapp:hover, .social__link.whatsapp:focus, .social__link.whatsapp:active {
+    background-image: url('../img/whatsapp-hover.svg');
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+.social__link.vk:hover, .social__link.vk:focus, .social__link.vk:active {
+    background-image: url('../img/vk-hover.svg');
+    -webkit-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+.social__link.youtube:hover, .social__link.youtube:focus, .social__link.youtube:active {
+    background-image: url('../img/youtube_hover.svg');
     -webkit-transition: all .25s ease-in-out;
     -o-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out;
@@ -108,6 +108,17 @@
     -webkit-transition: all .25s ease-in-out;
     -o-transition: all .25s ease-in-out;
     transition: all .25s ease-in-out;
+}
+
+@media (min-width:1921px) {
+    .social {
+        gap: 0.5vw;
+    }
+
+    .social__item {
+        width: 1.5vw;
+        height: 1.5vw;
+    }
 }
 
 @media (max-width:1199px) {

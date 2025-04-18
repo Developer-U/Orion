@@ -28,6 +28,13 @@
     top: 40%;
 }
 
+@media (min-width:1921px) {
+    .swiper-button-next.slider-arrow-next, .swiper-button-prev.slider-arrow-prev {
+        width: 1.5vw;
+        height: 1.5vw;
+    }
+}
+
 @media (max-width:930px) and (max-height:420px) {
     .swiper-button-next.slider-arrow-next, .swiper-button-prev.slider-arrow-prev {
         width: 30px;

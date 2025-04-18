@@ -84,7 +84,7 @@ if ($query_reviews->have_posts()) {
                                     </div>
                                 </div>
 
-                                <button type="button" class="reviews-bottom__btn main-reviews__item-more"><span>Читать
+                                <button type="button" class="reviews-bottom__btn main-reviews__item-more link-more"><span>Читать
                                         полностью</span></button>
 
                                 <button type="button"

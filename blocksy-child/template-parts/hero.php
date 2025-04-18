@@ -23,13 +23,7 @@ $hero_top_layer_image = get_field('hero_top_layer_image');
     <div
         class="container-fluid hero__wrapper position-relative position-relative d-flex flex-column justify-content-between">
         <div class="container">
-            <button class="button city-choose-btn d-flex d-md-none" data-popup-open="city-popup">
-                <span>Выбрать город отправки</span>
-            </button>
-
-            <button class="button header__btn d-flex d-xl-none" data-popup-open="zakaz-popup">
-                Заказать звонок
-            </button>
+            <?php get_template_part('template-parts/block', 'city-ratings'); ?>
 
             <h1 class="hero__title">
                 <?php echo $hero_title ? $hero_title : 'Грузоперевозки по России'; ?>
