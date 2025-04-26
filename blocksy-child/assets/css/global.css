@@ -470,6 +470,10 @@ body .post h2 {
     font-size: 18px;
 }
 
+body .post h3 {
+    font-size: 17px;
+}
+
 body h2.digits__title {
     margin-bottom: 4rem;
 }
@@ -598,6 +602,11 @@ body.single p.hero-pages-wrap__text {
 .city-list {
     column-gap: 40px;
     row-gap: 15px;
+}
+
+.popup__cont .city-list {
+    max-height: 60vh;
+    overflow-y: auto;
 }
 
 .city-item a {
@@ -766,6 +775,10 @@ ul.page-numbers li>.next.page-numbers, ul.page-numbers li>.prev.page-numbers {
 
     body .post h2 {
         font-size: 1vw;
+    }
+
+    body .post h3 {
+        font-size: 0, 8vw;
     }
 
     body h2.big-title {
@@ -1393,6 +1406,14 @@ ul.page-numbers li>.next.page-numbers, ul.page-numbers li>.prev.page-numbers {
     .rating-list__item {
         height: 43px;
     }
+
+    .popup__cont .city-list {
+        max-height: 53vh;
+    }
+
+    body .city-item a {
+        font-size: 13px;
+    }
 }
 
 @media (max-width:767px) {
@@ -1538,6 +1559,14 @@ ul.page-numbers li>.next.page-numbers, ul.page-numbers li>.prev.page-numbers {
     .rating-list__item {
         max-width: 120px;
     }
+
+    .popup__cont .city-list {
+        max-height: 70vh;
+    }
+
+    body .city-item a {
+        font-size: 13px;
+    }
 }
 
 @media (max-width:767px) and (max-height:420px) {
@@ -1576,6 +1605,10 @@ ul.page-numbers li>.next.page-numbers, ul.page-numbers li>.prev.page-numbers {
 
     .rating-list__item {
         max-width: 110px;
+    }
+
+    .popup__cont .city-list {
+        max-height: 53vh;
     }
 }
 
@@ -1640,6 +1673,16 @@ ul.page-numbers li>.next.page-numbers, ul.page-numbers li>.prev.page-numbers {
     section.hero-pages {
         padding-top: 74px;
         padding-bottom: 20px;
+    }
+
+    body .city-item a {
+        padding-left: 12px;
+    }
+
+    body .city-item a::before {
+        left: -10px;
+        width: 8px;
+        height: 8px;
     }
 }
 

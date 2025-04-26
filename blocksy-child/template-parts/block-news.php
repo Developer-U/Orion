@@ -15,12 +15,13 @@ $news_count = is_home() ? '16' : '4';
 $current_page = !empty($_GET['num']) ? $_GET['num'] : 1;
 
 $arg_news = array(
-    'orderby' => 'name',
+    'orderby' => 'date',
     'order' => 'DESC',
     'posts_per_page' => $news_count,
     'post_type' => 'post',
     'post_status' => 'publish',
     'paged' => $current_page,
+    // 'orderby' => 'menu_order',
 );
 
 $query_news = new WP_Query($arg_news);
@@ -49,7 +50,8 @@ if ($query_news->have_posts()) {
             <?php } else { ?>
                 <section class="news">
                     <div class="container">
-                    <?php } ?>
+                    <?php }                 
+                    ?>
                     <ul class="reviews__list reviews-list d-grid grid-four">
                         <?php if ($query_news->have_posts()) {
                             $i = 0;

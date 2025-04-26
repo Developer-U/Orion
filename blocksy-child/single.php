@@ -30,9 +30,9 @@ if (
     return;
 }
 $arg_posts = array(
-    'orderby' => 'name',
+    'orderby' => 'date',
     'order' => 'DESC',
-    'posts_per_page' => -1,
+    'posts_per_page' => 6,
     'post_type' => 'post',
     'post_status' => 'publish',
     'post__not_in' => array($id), // Исключим текущий пост

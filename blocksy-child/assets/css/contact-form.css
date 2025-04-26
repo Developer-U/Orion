@@ -174,6 +174,10 @@ form .wpcf7-form-control-wrap {
     display: block;
 }
 
+.service-item .wpcf7-not-valid-tip {
+    color: #dc3232;
+}
+
 .wpcf7 form .wpcf7-not-valid-tip {
     font-size: 12px;
     font-style: normal;

@@ -33,9 +33,7 @@
 }
 
 .popup__cont {
-    width: 600px;
-    max-height: 80vh;
-    overflow-y: auto;
+    width: 600px; 
     background-color: var(--light-grey);
     padding: 57px;
     position: relative;
@@ -129,6 +127,9 @@ button.popup__del:hover svg path, button.popup__del:focus svg path {
 @media (max-width:439px) {
     .popup__cont {
         padding: 50px 14px 30px;
+    }
+    .popup__cont.city-cont {
+        padding: 42px 16px 24px;
     }
 }
 
